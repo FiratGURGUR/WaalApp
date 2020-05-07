@@ -2,11 +2,11 @@
 
 Basic Wallpaper App
 
-Technology Used
+### Technology Used
 
--MVVM
--Live Data
--ViewModel
--Paging Library
--DiffUtil
--Retrofit
+- MVVM
+- Live Data
+- ViewModel
+- Paging Library
+- DiffUtil
+- Retrofit
