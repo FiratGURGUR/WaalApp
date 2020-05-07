@@ -10,5 +10,5 @@ Basic Wallpaper App
 - Paging Library
 - DiffUtil
 - Retrofit
-
-![How to set wallpaper](https://github.com/FiratGURGUR/WaalApp/blob/master/app/screen/waal.gif) width="30%"
+<img src="https://github.com/FiratGURGUR/WaalApp/blob/master/app/screen/waal.gif" width="30%">
+ 
