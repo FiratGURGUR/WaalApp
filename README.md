@@ -11,4 +11,4 @@ Basic Wallpaper App
 - DiffUtil
 - Retrofit
 
-![How to set wallpaper](https://github.com/FiratGURGUR/WaalApp/blob/master/app/screen/waal.gif){:height="700px" width="400px"}
+![How to set wallpaper](https://github.com/FiratGURGUR/WaalApp/blob/master/app/screen/waal.gif){:height="350px" width="200px"}
