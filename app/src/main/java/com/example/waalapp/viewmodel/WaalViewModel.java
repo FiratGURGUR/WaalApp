@@ -12,19 +12,25 @@ import com.example.waalapp.model.Waal;
 public class WaalViewModel extends ViewModel {
 
     public LiveData<PagedList<Waal>> userPagedList;
-    private LiveData<WaalDataSource> liveDataSource;
+    public LiveData<WaalDataSource> liveDataSource;
 
     public WaalViewModel() {
         init();
     }
     private void init() {
         WaalDataSourceFactory itemDataSourceFactory = new WaalDataSourceFactory();
+
+
+
         liveDataSource = itemDataSourceFactory.waalLiveDataSource;
         PagedList.Config config = new PagedList.Config.Builder()
                 .setEnablePlaceholders(false)
                 .setPageSize(WaalDataSource.PAGE_SIZE)
                 .build();
         userPagedList = new LivePagedListBuilder<>(itemDataSourceFactory, config).build();
+
+
+
     }
 
 

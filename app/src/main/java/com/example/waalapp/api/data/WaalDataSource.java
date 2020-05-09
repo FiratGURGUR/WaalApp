@@ -23,14 +23,14 @@ public class WaalDataSource extends PageKeyedDataSource<Long, Waal> {
     @Override
     public void loadInitial(@NonNull LoadInitialParams<Long> params, @NonNull final LoadInitialCallback<Long, Waal> callback) {
         MyApi api= MyClient.getInstance().getMyApi();
-        Call<WaalResponse> call=api.getWallpapers(String.valueOf(FIRST_PAGE));
+        Call<WaalResponse> call=api.getWallpapers(String.valueOf(1));
         call.enqueue(new Callback<WaalResponse>() {
             @Override
             public void onResponse(Call<WaalResponse> call, Response<WaalResponse> response) {
                 WaalResponse waalResponse = response.body();
                 if (waalResponse != null && waalResponse.getWaalList() != null) {
                     List<Waal> responseItems = waalResponse.getWaalList();
-                    callback.onResult(responseItems, null, FIRST_PAGE + 1);
+                    callback.onResult(responseItems, null, (long) 2);
                 }
             }
 
@@ -43,29 +43,7 @@ public class WaalDataSource extends PageKeyedDataSource<Long, Waal> {
 
     @Override
     public void loadBefore(@NonNull final LoadParams<Long> params, @NonNull final LoadCallback<Long, Waal> callback) {
-        MyApi api= MyClient.getInstance().getMyApi();
-        Call<WaalResponse> call=api.getWallpapers(String.valueOf(params.key));
-        call.enqueue(new Callback<WaalResponse>() {
-            @Override
-            public void onResponse(Call<WaalResponse> call, Response<WaalResponse> response) {
-                WaalResponse waalResponse = response.body();
-                if (waalResponse != null) {
-                    List<Waal> responseItems = waalResponse.getWaalList();
-                    long key;
-                    if (params.key > 1) {
-                        key = params.key - 1;
-                    } else {
-                        key = 0;
-                    }
-                    callback.onResult(responseItems, key);
-                }
-            }
 
-            @Override
-            public void onFailure(Call<WaalResponse> call, Throwable t) {
-                Log.i("error",t.getMessage());
-            }
-        });
     }
 
     @Override

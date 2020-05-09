@@ -6,6 +6,7 @@ import androidx.paging.DataSource;
 import com.example.waalapp.model.Waal;
 
 public class WaalDataSourceFactory extends DataSource.Factory<Long, Waal> {
+
     public MutableLiveData<WaalDataSource> waalLiveDataSource =new MutableLiveData<>();
 
     @Override
@@ -14,4 +15,7 @@ public class WaalDataSourceFactory extends DataSource.Factory<Long, Waal> {
         waalLiveDataSource.postValue(waalDataSource);
         return waalDataSource;
     }
+
+
+
 }
